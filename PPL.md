@@ -12,5 +12,5 @@ The PPL for the whole test datasets is computed as below:
 
 $$ PPL = \frac{1}{N}PPL_{sample} = \frac{1}{N}exp(L_{so}) = \frac{1}{N}exp(-logp(\hat{Y_i}|S_i)) = \frac{1}{N}exp(- \sum_{k=1}^{|\hat{Y_i}|}logp(\hat{Y_{i,k}}|S_i,\hat{Y_{i,{<}k}}))$$
 
-Note that for different variants of planning-based model (eg., with or without temporal prompts), their reference of calculating loss is the same whcih is the golden story $\hat{Y}$ (In other words, PPL reflects the perplexity of the model to generate golden stories $\hat{Y}$). Therefore, different forms of sketch ($S_i$, eg., with or without temporal prompts) doesn't influence the calculated process of PPL (perplexity).
+Note that for different variants of planning-based model (eg., with or without temporal prompts), their reference of calculating loss is the same whcih is the golden story $\hat{Y}$ (In other words, PPL reflects the perplexity of the model to generate golden stories $\hat{Y}$). Therefore, different forms of sketch ($S_i$, eg., with or without temporal prompts) doesn't influence the calculated process of PPL (perplexity). So, we just compute PPL for different variants of planning-based model with the same method, and then comapre their values.
 
