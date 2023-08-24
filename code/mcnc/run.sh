@@ -1,0 +1,1 @@
+python main.py --config_file ./configs/Bidirectional_bart_base_pretraining.yaml

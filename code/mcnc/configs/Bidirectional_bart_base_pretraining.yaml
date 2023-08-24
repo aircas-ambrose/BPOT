@@ -1,0 +1,44 @@
+eval_decode_max_length : 768
+truncation: True
+model_type: 'bart_mask_random'
+pretrained_model_path: ''   # set the path of pretrained bart-base model
+data_dir: ''                # set the path of pretraining data
+annotation: 'bidirectional_pretraining'
+checkpoint : ''
+resume: False
+use_gpu: True
+multi_gpu: False
+debug: False
+pro_type : 'sqrt'
+gpuid: '0'
+gpu_num: 1
+filemode: 'w'
+patience : 3
+num_train_epochs: 10
+max_train_steps: 0
+per_gpu_train_batch_size: 10
+gradient_accumulation_steps: 10
+eval_batch_size: 10
+log_step: 500
+margin: 0.4
+noise_lambda: 0
+pretrain: True
+random_span: False
+stage1_event_mask_ratio: 0.25    # event mask infilling
+stage2_event_mask_ratio: 0.15    # no use
+stage3_event_mask_ratio: 0.10    # no use
+stage4_event_mask_ratio: 0.05   # no use
+denominator_correction_factor: 0
+softmax: True
+lr_scheduler_type: 'constant' # constant cosine
+loss_fct: 'CrossEntropyLoss' # CrossEntropyLoss MarginRankingLoss ComplementEntropy
+fp16: False
+lr: 1.0e-5
+weight_decay: 0.01
+epsilon: 1.0e-8
+seed: 9998
+loss_ratio_start: 1
+loss_ratio_end: 3
+macro_loss: False
+ablation_event: False     # whether only use pairwise order prediction
+ablation_timing: False    # whether only use event mask infilling
