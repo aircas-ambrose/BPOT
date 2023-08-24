@@ -4,7 +4,7 @@ Let $x_i$ denote the input of $i_{th}$ sample, $\hat{S_i}$, $S_i$, $\hat{Y_i}$ d
 The stage for input to sketch: $$L_{is} = -logp(\hat{S_i}|x_i) = -\sum_{k=1}^{|\hat{S_i}|}logp(\hat{S_{i,k}}|x_i,\hat{S_{i,{<}k}})$$
 The stage for sketch to output: $$L_{so} = -logp(\hat{Y_i}|S_i) = - \sum_{k=1}^{|\hat{Y_i}|}logp(\hat{Y_{i,k}}|S_i,\hat{Y_{i,{<}k}})$$
 
-As we tend to focus more on the quality of the final generation of the story, the PPL (perplexity) is computed by $L_{so}$. The PPL (perplexity) is computed by averaging the negative logarithmic likelihood of the sample. Specifically, for each sample, the PPL is computed by as below:  
+As we tend to focus more on the quality of the final generated story, the PPL (perplexity) is depended on $L_{so}$. The PPL (perplexity) is computed by averaging the negative logarithmic likelihood of the sample. Specifically, for each sample, the PPL is computed by as below:  
 
 $$PPL_{sample} = exp(L_{so})$$
 
